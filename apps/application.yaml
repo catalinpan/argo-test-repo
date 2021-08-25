@@ -1,0 +1,23 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ict-cicd-common-helm-apps
+  namespace: argo-cd
+  labels:
+    cluster-name: ict-cicd
+spec:
+  project: default
+  destination:
+    name: in-cluster
+    namespace: argo-cd
+  source:
+    directory:
+      recurse: false
+    path: apps
+    repoURL: https://github.com/catalinpan/argo-test-repo.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
