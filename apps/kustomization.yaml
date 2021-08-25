@@ -1,5 +1,5 @@
 ---
 resources:
 ## Application resources
-- apps/argo-test-1/application.yaml
-- apps/argo-test-2/application.yaml
+- argo-test-1/application.yaml
+- argo-test-2/application.yaml
